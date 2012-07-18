@@ -1,0 +1,272 @@
+//main typography/vertical rhythm set up partial
+p, ul, ol, h1, h2, h3, h4, h5, h6, blockquote {
+  margin-bottom: 14px;
+}
+h1, h2, h3, h4, h5, h6, blockquote {
+	@include font-family-serif;
+}
+h1 {
+	@include font-shorthand(2em, 400, 1.4em);
+	margin-top: 6px;
+}
+h2 {
+	@include font-shorthand(1.6em, 400, 1.4em);
+  	margin-top: 6px;
+}
+h3 {
+	@include font-shorthand(1.3em, 400, 1.3em);
+  	margin-top: 6px;
+}
+h4,h5,h6 {
+  	font-weight:700;
+}
+h6 {
+    text-transform: inherit;
+    color: $grayDark;   
+}
+hr {
+  color:#e7e7e7;
+  height:1px;
+  border:none;
+  border-top:1px solid #e7e7e7;
+}
+
+/*stop editors messing with headings*/
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h1 strong, h2 strong, h3 strong {
+	font-weight: normal;
+    border-bottom: none;
+}
+
+/*allow editors using the EES to make bold anchors*/
+strong a {
+    font-weight: bold;
+}
+.standfirst {
+	@include font-sans-serif(1.2em, normal, 1.4em);
+	margin: 0 0 10px 0;
+	font-style: italic;
+	color: $grey5;
+}
+p {
+	overflow: hidden;
+}
+.note {  
+    background-color: #FFFFCC;
+    border: 1px solid #FFE599;
+    padding: 10px;
+}
+ul li, ol li {
+	padding: 0;
+}
+ol li {
+	list-style: decimal;
+	margin: 0 0 0 20px;
+}
+    ol ul li {
+        list-style: circle;
+    }
+ul ul {
+    margin-bottom: 0;
+    list-style: circle;
+}
+ol ol {
+    margin-bottom: 0;
+}
+dl {
+
+}
+dt{
+    padding: 5px;
+    background: #f7f7f7;
+	margin-bottom: 10px;
+    font-family: $serifFontFamily;
+    font-size: 1.2em;
+}
+dd{
+   margin: 0 0 14px 10px;
+}
+acronym, abbr, dfn {
+	border-bottom: 1px #333 dotted;
+	cursor: help;
+}
+code {
+	font-family: $monoFontFamily;
+}
+blockquote {
+	font-family: $serifFontFamily;
+	font-style: italic;
+	font-size: 1.1em;
+	line-height: 1.4em;
+	color: $grey5;
+	padding: 0 0 0 40px;
+	margin: 20px 0 20px 0;
+	background: transparent image_url("skin/quote.png") no-repeat left top;
+	clear: both;
+}
+img {
+	border: 2px solid #ccc;
+}
+img.right {
+	margin: 0 0 0 10px; 
+}
+img.left {
+	margin: 0 10px 0 0;
+}
+img.no-border {
+    border: none;
+}
+table {
+	width: 100%;
+	margin-bottom: 14px;
+	border-left: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	font-size: 0.8em;
+	border-collapse: collapse;
+
+	caption {
+		width: 100%;
+		text-align: right;
+		font-family: $serifFontFamily;
+		@include adjust-font-size-to(18px);
+		margin: 0 0 10px 0;
+	}
+
+	th {
+		border: 1px solid #C1DAD7;
+		border-left: none;
+		border-top: none;
+		text-align: left;
+		font-weight: bold;
+		@include gradient-vertical(#EAE9E7, #E0DBD7);
+		padding: 5px;
+	}
+	
+	td {
+		border-right: 1px solid #C1DAD7;
+		border-bottom: 1px solid #C1DAD7;
+		background: #fff;
+		text-align: left;
+		padding: 5px;
+		display: table-cell;
+	}
+	
+	td.alt {
+		background: #F5FAFA;
+		color: #797268;
+	}
+}
+
+object, img {
+	margin: 0 0 14px 0;
+	max-width: 100%;
+  	width: auto;
+  	height: auto;
+}
+
+//TODO: not used?
+#content {
+	//font-size: 1.2em;
+	//line-height: 1.4em;
+}
+//TODO: not used?
+
+
+//TODO: move?
+.pub-date {	
+	margin: 0;
+	font-style: italic;
+}
+#content.testimonials {
+	padding: 0 0 20px 0;
+}
+#content.standard {
+	padding: 0 0 20px 0;
+	table {
+		max-width: 500px;
+	}
+}
+#content.image-gallery {
+    padding: 0 0 20px 0;
+    width: 780px;
+    margin: 0;
+}
+
+.sj #content .youtube, .js #content .fms {
+	display: none;
+}
+
+/*added for search change over*/
+#content #dont-show {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2px;
+    border: none;
+    font-size: 12px;
+}
+#dont-show .close {
+    background: transparent image_url("skin/ui-icons_ef8c08_256x240.png") no-repeat -80px -128px;
+    @include size(16px, 16px);
+    margin-top: 3px;
+    text-indent: -999999px;
+    display: block;
+    float: right;
+}
+.js .search .note {
+    display: none;
+    position: relative;
+}
+/*styles for labs charts*/
+#labs, .labs {
+    display: none;
+}
+.js #labs, .js .labs {
+    display: block;
+    background: #fafafa image_url("skin/ajax-loader-small-red.gif") center 50% no-repeat!important;
+    margin: 0 0 10px 0;
+    p {
+        padding: 20px;
+        display: block;
+    }
+}
+/*A-Z listings*/
+#alpha-pagination {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 0 0 20px 0;
+    @include clearfix;
+    background: #f7f7f7;
+    color: #999;
+    font-size: 1.2em;
+
+    a:visited{
+        color: #B02A1A;
+    }
+    a:active {
+        background: #ef383f;
+        color: #fff;
+    }
+    a:hover, a:focus{
+        border-bottom: 1px solid #ccc;
+        background: #B02A1A;
+        color: #fff;
+    }
+}
+.odd {
+    background: #f7f7f7;
+}
+
+#content .alpha li {
+    margin: 0;
+    list-style: none;
+    padding: 10px 5px;
+}
+.notice-message {
+    border: 1px solid #dee266;
+    background: #ffd;
+    padding: 10px;
+}
+//TODO: move?
+
+//END OLD _typography.scss

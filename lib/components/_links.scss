@@ -1,0 +1,167 @@
+// standard link colours
+
+a {
+    border-bottom: 1px solid $grey3;
+    text-decoration: none;
+    &:link {
+	  color: $linkColor;
+	  border-bottom: 1px solid $grey3;    
+	  text-decoration: none;
+	}
+    &:visited {
+		color: #670003;
+    }
+    &:hover {
+        border-bottom: 1px solid $white;
+        color: $logoRed;
+    }
+    &:focus {
+		background-color: $linkColor;
+		color: $white;
+		border-bottom: 1px solid $white;
+    }
+    &:active{
+	  background-color: $logoRed;
+	  color: $white;
+	  border-bottom: 1px solid $white;
+	}
+} 
+
+#skip {
+  display: none;
+}
+
+//call to action snippets
+//TODO: move?
+.action {
+	background: $white;
+	width: 100%;
+	border: 1px solid $grey3;
+	@include clearfix;
+	margin: 0 0 20px 0;
+	
+	.action-text {
+		float: left;
+		display: inline;
+		width: 63%;
+		margin: 10px 0 20px 20px;
+		
+		h3 {
+			margin: 0 0 5px 0;
+			@include font-sans-serif(1.4em, bold, 1.4em);
+		}
+	}
+	.action-image {
+		position: absolute;
+		bottom: 0;
+		right: 20px;
+	}
+}
+
+.drop-shadow {
+	position:relative;
+	@include box-shadow("0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset");
+}
+
+.drop-shadow:before, .drop-shadow:after {
+	content:"";
+	position:absolute; 
+	z-index:-2;
+}
+
+/* Lifted corners */
+
+.lifted {
+	-moz-border-radius:4px; 
+		 border-radius:4px;
+}
+
+.lifted:before, .lifted:after { 
+	bottom:15px;
+	left:10px;
+	width:50%;
+	height:20%;
+	max-width:300px;
+	@include box-shadow(0 15px 10px rgba(0, 0, 0, 0.7));
+	@include rotate(-3deg);
+}
+
+.lifted:after {
+	right:10px; 
+	left:auto;
+	@include rotate(3deg);
+}
+
+
+.action-button-wrap {
+	display: inline;
+}
+#content a.action-button {
+     border: none;
+}
+#content a.action-button:hover {
+     text-decoration: underline;
+}
+.action-button {
+	background: $red1 image-url("skin/icon-action-arrow.png") no-repeat right center;
+	padding: 4px 20px 4px 5px;
+	color: white;
+	font-weight: bold!important;
+	@include border-radius(2px);
+	@include transition(background 0.3s ease);
+	text-shadow: 1px 1px 1px $red2;
+	@include box-shadow(0 2px 2px rgba(0,0,0,0.5));
+	
+	&:hover {
+		background-color: $red2;
+		color: $white;
+	}
+	&:visited {
+		color: $white;
+	}
+	&:active {
+	}
+}
+/*large call to action buttons*/
+#content a.big-action-button {
+	@include transition(all 0.3s ease);
+	background: #b02a1a image_url("skin/icon-action-arrow.png") no-repeat scroll 195px 50%;
+	@include gradient-vertical(#b02a1a, #96190b);
+	@include border-radius(4px);
+	@include box-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+    color: $white;
+    font-weight: bold !important;
+    font-size: 1.25em;
+    padding: 8px 20px 8px 5px;
+    text-shadow: 1px 1px 1px #96190B;
+    display: block;
+    width: 192px;
+    text-align: center;
+    border-bottom: none;
+    line-height: 1.3em;
+    float: left;
+    margin: 0 20px 0 0;
+}
+#content a.big-action-button:hover {
+    background: #96190b image_url("skin/icon-action-arrow.png") no-repeat scroll 195px 50%;
+	@include gradient-vertical(#96190b, #b02a1a);
+    text-decoration: underline;
+}
+#content .button-list {
+    padding: 0;    
+}
+#content .button-list li {
+    padding: 0;
+    margin-bottom: 20px;
+    list-style: none;
+}
+#content .button-list li p {
+   margin: 0 auto; 
+}
+/*pdf icons for links with class pdf*/
+.pdf {
+    background: transparent image-url("skin/icon-pdf.gif") no-repeat 0 center;
+    padding-left: 20px;
+}
+
+//TODO: move?

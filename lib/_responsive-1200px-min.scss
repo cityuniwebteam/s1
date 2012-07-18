@@ -1,0 +1,30 @@
+// LARGE DESKTOP & UP
+// ------------------
+
+@media (min-width: 1200px) {
+
+  // Fixed grid
+  @include grid-core($gridColumnWidth, $gridGutterWidth);
+
+  // Fluid grid
+  @include grid-fluid(5.982905983%, 2.564102564%);
+
+  // Input grid
+  @include grid-input(70px, 30px);
+
+  // Thumbnails
+  .thumbnails {
+    margin-left: -30px;
+  }
+  .thumbnails > li {
+    margin-left: 30px;
+  }
+  .row-fluid .thumbnails {
+    margin-left: 0;
+  }
+  .drop-1col {width: 200px;} 
+  .drop-2col {width: 400px;}
+  .drop-3col {width: 600px;} 
+  .drop-4col {width: 800px;}
+  .drop-5col {width: 970px;}
+}

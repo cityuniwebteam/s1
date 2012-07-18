@@ -1,0 +1,55 @@
+#digital-shoreditch #content {
+    font-size: 1em;
+    
+    a {
+    	font-weight: bold;
+    }
+}
+#digital-shoreditch h1 {
+    display: none;    
+}
+
+#digital-shoreditch #digital-twitter h2 a{
+    font-weight: normal;
+}
+
+#container #digital-search {
+    margin-bottom: 61px;
+    label {
+        display: block;      
+        float: none;
+        padding: 0;
+        margin: 0 0 14px 0;
+    }
+    p {
+        margin: 0;
+    }
+    #search-query {
+        width: 615px;
+    }
+}
+
+#digital-shoreditch #competition {
+    padding: 15px 0;
+}
+
+#coverage {
+    @include clearfix;    
+    clear: both;
+
+    a {
+    	font-weight: bold;
+    }
+}
+
+#digital-map {
+    border: 1px solid #ccc;    
+    padding: 9px;
+    background: #f7f7f7;
+}
+#container #content #slidedeck_frame {
+    width: 960px;
+    height: 300px;
+    padding: 10px;
+    margin: 0 0 20px 0;
+}        

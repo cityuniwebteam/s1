@@ -1,0 +1,64 @@
+
+/*breadcrumbs*/
+
+#primary-breadcrumb  {
+	margin: 0 0 20px 0;
+	width: 980px;
+	clear: both;
+	background: #E0DBD7;
+	@include clearfix;
+	a {
+		padding: 5px 10px 5px 20px;
+		display: block;
+		float: left;
+		color: #333;
+		background: #E0DBD7 image_url("skin/icon-primary-breadcrumb.png") no-repeat left top;
+		border-bottom: none;
+	}
+
+	a.child0, a:first-child {
+		background-image: none;
+		padding: 9px 10px;
+		span {
+			text-indent: -99999px;
+			background: transparent image_url("skin/icon-arrow-sprite.png") no-repeat left -290px;
+			display: block;
+			@include size(10px, 10px);
+			margin: 0;
+		}
+	}
+	a:focus, a:active {
+		text-decoration: underline;
+	}
+}
+
+#breadcrumb {
+	margin: 0 0 10px 0;
+	a {
+		@include font-shorthand(12px, bold, inherit);
+		padding: 0 15px 0 0;
+		background: transparent image_url("skin/icon-arrow-sprite.png") no-repeat right -267px;
+		margin: 0 0 0 5px;
+		border-bottom: none;
+		&:hover {
+			text-decoration: underline;
+		}
+		&:last-child {
+			background-image: none;
+		}
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+#breadcrumb	a:visited span {
+    color: $red1;
+}
+#breadcrumb	a:focus, #breadcrumb a:active {
+    background-color: #fff;
+    color: $red1;
+}
+#breadcrumb a:focus span, #breadcrumb a:active span {
+    background-color: $red1;
+    color: #fff;
+}

@@ -1,0 +1,104 @@
+/*!
+ * Bootstrap v2.0.4
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+
+// using previous city css, taken from production branch, up to and including revision 6045
+// a lot of the bootstrap files may not be needed, the files can be removed when we're sure
+
+
+
+// Core variables and mixins
+@import "variables"; // Modify this for custom colors, font-sizes, etc
+@import "mixins";
+
+// CSS Reset
+@import "reset";
+
+// Grid system and page structure
+@import "scaffolding";
+@import "grid";
+@import "layouts";
+
+// Base CSS
+@import "type";
+@import "code";
+//@import "forms";
+//@import "tables";
+
+// Components: common
+//@import "sprites";
+//@import "dropdowns";
+//@import "wells";
+//@import "component-animations";
+//@import "close";
+
+// Components: Buttons & Alerts
+// @import "buttons";
+// @import "button-groups";
+// @import "alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons
+
+// Components: Nav
+//@import "navs";
+//@import "navbar";
+//@import "breadcrumbs";
+//@import "pagination";
+//@import "pager";
+
+// Components: Popovers
+//@import "modals";
+//@import "tooltip";
+//@import "popovers";
+
+// Components: Misc
+//@import "thumbnails";
+// @import "labels-badges";
+//@import "progress-bars";
+//@import "accordion";
+//@import "carousel";
+// @import "hero-unit";
+
+// Utility classes
+@import "utilities"; // Has to be last to override when necessary
+
+
+//include mobile responsive styles
+//@import "responsive";
+
+//extra compass mixins necessary for city styles
+@import "compass/typography/vertical_rhythm"; //for the adjust-font-size-to mixin in _widget.scss
+
+
+
+// city styles
+@import "components/typography";
+@import "components/city";
+@import "components/utilities";
+@import "components/primary_navigation";
+@import "components/secondary_navigation";
+@import "components/breadcrumbs";
+
+
+@import "components/header";
+@import "components/footer";
+
+@import "components/links";
+
+@import "components/forms";
+ 
+
+@import "components/image_gallery";
+@import "components/accordion";
+
+@import "components/widgets";
+
+
+
+//city responsive
+@import "components/city_responsive";

@@ -1,0 +1,29 @@
+/*image galleries*/
+
+#content .gallery img {
+    border: none;
+}
+.gallery {
+    margin-bottom: 20px;    
+}
+
+.js .gallery-nav { 
+    display: none;
+}
+
+.js .gallery {
+    opacity: 0.6; 
+    position: relative;
+}
+
+.js .gallery .loading {
+    background: transparent image_url("skin/ajax-loader-small-red.gif") center 50% no-repeat!important;
+    display: block;
+    height: 31px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 31px;
+    z-index: 3000;
+    text-indent: -999999px;
+}

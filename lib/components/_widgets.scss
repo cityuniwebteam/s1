@@ -1,0 +1,778 @@
+// courses widget
+#contact-widget {
+	.widget-content{
+		margin: 0;
+		padding: 0 5px;
+	}
+}
+
+.js #rss-widget, .js #rss-block {
+    display: none;
+}
+
+#rss-widget {
+    .rss-item {
+       width: 250px;
+       padding: 0 5px;
+    }
+    .widget-content {
+        padding: 10px 0 5px 0;
+        width: 260px;
+    }
+    .rss-meta {
+       @include clearfix;  
+       margin-bottom: 10px;
+       float: none;
+       width: 250px;
+       
+       img {
+           float: left;
+           margin-right: 10px;
+       }
+    }
+    ol {
+        width: 250px;
+        li {
+            padding: 10px;
+            background: #fff;
+            margin-bottom: 1px;
+            width: 230px;
+        }
+    }
+    h4 {
+        margin-bottom: 0;
+    }
+    .pub-date {
+        margin-bottom: 10px;
+    }
+}
+
+#courses-widget {
+	.widget-content{
+		margin: 0;
+		padding: 0;
+        border-bottom: none;
+	}
+
+    .ui-accordion-header {
+		font-weight: bold;
+		color: $grey6;
+		border: none;
+		border-bottom: 1px solid $white;
+		font-size: 1em;
+		margin: 0;
+
+	  a {
+		  padding: 5px;
+	  }
+    }
+
+	.ui-state-active{
+		background-color: #EAE9E7;
+		a {
+			border-width: 0 0 1px 0;
+		}
+	}
+	.ui-state-default{
+		background-color: #EAE9E7;
+	}
+
+    .ui-accordion-content {
+		padding: 0px 1px;
+		
+		li.course {
+		    background: #fff;
+		    border-bottom: 1px solid $grey2;
+		    padding: 2px 5px;
+		
+		  h4 {
+			  font-size: 1em;
+			  margin: 0;
+		  }
+		}
+    }
+}
+
+// profiles widget
+#profiles-widget, #gallery-widget{
+
+    .scrollable{
+        @include size(150px, 100px);
+        min-height: 250px;
+        overflow:visible!important;
+        margin: 0 0 0 76px;
+    
+        .items{
+            .item{
+                float: left;
+                width: 145px;
+                margin: 0 5px;
+            
+                img {
+                  border: 1px solid #fff;
+                }
+            }
+            .active{
+                img {
+                  border: 1px solid #000;
+                }
+            }
+            .disabled{
+                img{
+                   /* for IE */
+                  filter:alpha(opacity=60);
+                  /* CSS3 standard */
+                  opacity:0.6;
+                }
+                .name, .department, .job-title {
+                    color: #ccc;
+                    
+                    a {
+                        color: #ccc;
+                    }
+                 }
+            }
+        }
+    }
+
+    .widget-content{
+        overflow: hidden;
+    }
+}
+#profileOverlay .profileImage {
+    float:right;
+    margin:10px 0 20px 20px;
+}
+#profileOverlay .profileEmail {
+    margin-bottom: 25px;
+}
+
+#profileOverlay .action-button-wrap {
+    display:block;
+}
+
+// events widget
+#events-widget, #testimonials-widget, #news-widget{
+	.widget-content{
+		margin: 0;
+		padding: 0;
+	}
+}
+
+// news widget
+#news-widget{
+	.scrollable {
+		min-height: 220px;
+	}
+	ol {
+	
+		li{
+			padding: 10px 0;
+			margin: 0 10px;
+			border-bottom: 1px solid $grey3;
+			@include clearfix;
+			
+			&:hover {
+				background-color: $grey1;
+				cursor: pointer;
+			}
+			
+			h3, h4 {
+                @include font-sans-serif(1em, bold, 1.3em);
+				margin: 0 0 5px 0;
+				overflow: hidden;
+			}
+			img {
+				float: left;
+				margin: 0 10px 0 0;
+				display: inline;
+			}
+			p {
+				margin: 0;
+				overflow: hidden;
+			}
+		}
+	}
+}
+
+// maps widget
+#map-widget {
+    .map {
+        display: block;
+        @include size(200px, 260px);
+        position: relative;
+        cursor: pointer;
+        border: 1px solid $white;
+        border-width: 0px 0px 1px 0px;
+    
+    .magnifier, img {
+        position: absolute;
+    }
+    
+    .magnifier {
+        display: block;
+        @include size(20px, 20px);
+        bottom: 0;
+        right: 0;
+        z-index: 100;
+        background: transparent image_url("skin/icon-magnifier.png") no-repeat 0 0;
+    }
+  
+	  &:hover {
+        .magnifier {
+            background-position: 0 bottom;
+        }
+	  }
+    }
+
+    #mapJsData {
+        display: none;
+    }
+
+	.widget-content {
+		margin: 0;
+		padding: 0;
+		background: #EAE9E7; 
+
+		.vcard {
+			margin: 0 5px;
+		}
+	}
+}
+
+
+// generic scrollable settings for - scoped within .widget
+.scrollable{
+    /* required settings */
+    position:relative;
+    overflow:hidden;
+    width: 260px;
+    min-height: 270px;
+    height:auto !important;
+    height: 270px;
+
+    .items {
+        /* this cannot be too large */
+        width:20000em;
+        position:absolute;
+    
+        div {
+            float: left;
+            @include size(auto, 260px);
+        }
+    }
+}
+/*overwrite for vcalendar widget*/
+.widget .scrollable .items {
+    width: 20000em;
+}
+
+.widget, .block {
+    
+    .widget-controls {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    
+        a {
+            background: $red1;
+            display: block;
+            @include size(19px, auto);
+            padding: 2px 0;
+            color: $white;
+            float: left;
+            cursor: pointer;
+            @include box-shadow( 1px 1px 1px #ccc);    
+            span{
+                background: transparent image_url("skin/icon-arrow-sprite.png") 0 0 no-repeat;
+                @include size(20px, 20px);
+            }
+            &:visited{
+                color: $white;
+            }
+            &:hover{
+                background-color: $logoRed;
+            }
+            &:focus{
+                background-color: $red2;
+            }
+            &:active{
+                background-color: $red3;
+            }
+        }
+        
+        a.disabled {
+            filter:alpha(opacity=50);
+            opacity: 0.5;
+            
+            &:hover {
+                background: $red1;
+                cursor: auto;
+            }
+        }
+    
+        a.prev {
+            @include border-radius(2px 0 0 2px);
+            border-right: 1px solid $white;
+    
+            span {
+                background-position: 5px -185px;
+                text-indent: -99999px;
+                display: block;
+            }
+        }
+    
+        a.all, a.refresh{
+            border-right: 1px solid $white;
+            text-align: center;
+            padding: 2px 5px;
+            line-height: 1.6em;
+            span {
+              margin: 0 10px;
+              background: none;
+            }
+        }
+    
+        a.next {
+            @include border-radius(0 2px 2px 0);
+    
+            span{
+              background-position: 5px -125px;
+              display: block;
+              text-indent: -99999px;
+            }
+        }
+    }
+}
+
+#content .scrollable {
+    width: 500px;
+    
+    .items div {
+        width: 480px;
+        padding: 0 10px;
+    }
+}
+
+/*overwrites for unit-n pages */
+#content.unit-page .scrollable {
+    width: 700px;
+    
+    .items div {
+        width: 680px;
+    }
+}
+
+/*content blocks*/
+#content #rss-block {
+    .rss-meta {
+        float: none;
+    }
+    .rss-item h4 {
+        margin: 0;
+    }
+    ol, ul {
+        li {
+            padding: 10px;
+            margin: 0 0 1px 0;
+            background: #fff;
+            list-style: none;
+        }
+    }
+}
+#content .widget-controls a {
+    border-bottom: none;      
+}
+
+#content .block {
+    margin: 0 0 20px 0;
+    padding: 0 0 10px 0;
+    position: relative;
+	@include clearfix;
+
+    h2 {
+		margin: 0;
+        padding: 10px;
+		border-bottom: 1px solid $white;
+        @include gradient-vertical(#eae9e7, #e0dbd7);
+    }
+    
+    .block-content {
+        margin: 0;
+        padding: 10px 0;
+        background: #EAE9E7; 
+        border-bottom: 1px solid #fff;
+        @include clearfix;
+    }
+}
+
+
+/*default widget*/
+
+.widget h2, #slider-wrapper #slider h2 {
+    padding: 10px 10px;
+    margin: 0;
+    border-top: none;
+    border-bottom: 1px solid $white;
+    color: $grey6;
+    @include font-sans-serif(1.2em, bold, 1.6em);
+    @include gradient-vertical(#eae9e7, #e0dbd7);
+}
+
+.widget {
+    margin: 0 0 20px 0;
+    padding: 0 0 10px 0;
+    position: relative;
+	@include clearfix;
+
+    .widget-content {
+		margin: 0;
+		padding: 10px 5px;
+		background: #EAE9E7; 
+		border-bottom: 1px solid #fff;
+		@include clearfix;
+
+		ul {
+			margin: 0 0 0 5px;
+		}
+		
+		h2 {
+			font-size: 1.2em;
+		}
+		
+		h3 {
+            @include font-sans-serif(1.1em, bold, inherit);
+		}
+		
+		h2, h3 {
+			margin: 0 0 5px 0;
+			padding: 0;
+			border: none;
+			color: $grey6;
+			text-transform:none;
+		}
+		blockquote {
+			clear: both;
+			@include font-family-serif;
+			font-style: italic;
+			background: transparent image_url("skin/small-quote.png") no-repeat left top;
+			padding: 0 0 0 20px;
+            margin: 0 0 10px 0;
+		}
+		img.right {
+			margin: 0 0 5px 5px;
+		}
+		img.left {
+			margin: 0 5px 5px 0;
+		}
+		.vcard {
+			border-bottom: 1px solid #ccc;
+			padding: 10px 5px;
+		
+			.fn {
+				font-weight: bold;
+			}
+		
+			.tel span, .fax span {
+				font-weight: bold;
+			}
+			&:last-child{
+				border-bottom: none;
+			}
+		}
+
+    }
+
+   // events widget
+   
+	.vcalendar {
+		border: none;
+		width: 260px;
+		
+		div {
+			//float: left;
+			//display: inline;
+		}
+		
+		li.vevent {
+			background: none;
+			padding: 0;
+			margin: 0 10px;
+			width: 240px;
+			border-bottom: 1px solid $grey3;
+
+		
+			&:last-child {
+				border: none;
+			}
+			&:lfirst-child {
+			    padding-top: none;
+			}
+			&:hover {
+			    background-color: $grey1;
+			    cursor: pointer;
+			}
+			
+			.date {
+			    margin: 10px 10px 10px 0;
+				padding: 0;
+			    width: 70px!important;
+				float: left;
+				display: inline;
+			}
+			
+			.event-details {
+			    width: 160px;
+			    margin: 10px 0;
+			}
+		}
+	}
+}
+
+.careers-widget {
+
+    .widget-content {
+		padding: 3px;
+		margin: 0;
+	
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+    }
+
+    li {
+		padding: 0;
+		margin-top: 5px;
+
+		a {
+			display: block;
+			padding: 10px 5px;
+			background: $white;
+			color: $blue1;
+		}
+    }
+}
+
+#twitter-widget, #flickr-widget { 
+
+    .widget-content  {
+
+        padding: 0;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+    }
+
+    li {
+        background: $white;
+        margin-bottom: 1px;
+        padding: 0;
+    }
+
+    ul.js {
+        position: absolute;
+        width: 2000em;
+        
+        li {
+            width: 250px; //mixin to calculate this?
+        }
+        
+        //divs added by js
+        div {
+            float: left;
+            padding: 10px 5px;
+        }
+
+    }
+
+}
+
+#twitter-widget {
+
+    #twitter-meta {
+		min-height: 40px;
+		margin: 10px 0 0 0;
+		background-repeat: no-repeat;
+		background-position: 20px 0;
+		padding-left: 80px;
+		padding-bottom: 0;
+		@include adjust-font-size-to(18px);
+    }
+
+    #twitter-next-page-url {
+		display: none;
+    }
+
+    li.with-pic {
+		@include background-size('48px 48px');
+			p {
+				padding-left: 60px;
+			}
+		}
+	
+		p {
+			padding: 10px; //susy needed
+			margin: 0;
+	
+		.tweet-time, .tweet-retweet, .tweet-reply {
+			padding-right: 1em;
+		}
+    }
+}
+
+#gallery-widget .widget-content {
+    padding: 5px;    
+}
+
+#flickr-widget {
+
+    .imageurl {
+		display: none;
+    }
+
+    li > a, li > a img {
+		display: block;
+		margin: 0 auto;
+		border: solid $white;
+		border-size: 2px 0;
+    }
+
+    $img-meta-x-padding: 10px;
+    $img-meta-y-padding: 10px;
+
+    .image-meta {
+		min-height: 50px;
+		padding: $img-meta-x-padding $img-meta-y-padding $img-meta-x-padding $img-meta-y-padding + 60px;
+		margin: 0;
+		background: $white no-repeat $img-meta-y-padding $img-meta-x-padding;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: none;
+		@include opacity(0.95);
+    }
+    
+    li {
+		position: relative;
+
+		&:hover {
+			z-index: 99;
+	
+			.image-meta {
+				display:block;
+			}
+		}
+    }
+}
+/* bespoke testimonial stuff*/
+#testimonials-widget {
+	ul {
+		list-style-type: none;
+		padding: 10px 0 0 0;
+		margin: 0;
+
+		li {
+			padding: 0 10px;
+			margin: 0;
+			@include clearfix;
+			float: left;
+			width: 240px;
+		}
+	}
+    blockquote {
+        clear: both;
+        @include font-family-serif;
+        font-style: italic;
+        background: transparent image_url("skin/small-quote.png") no-repeat left top;
+        padding: 0 0 0 20px;
+    }
+    .details {
+        margin: 0 0 10px 0;
+        overflow: hidden;
+        width: auto;
+        float: none;
+        
+        .name {
+            font-weight: bold;
+        }
+    }
+    img {
+        float: left;
+        display: inline;
+        padding: 0 10px 0 0;
+     }
+}
+
+#testimonial-dialog { 
+    .loader {
+        background: transparent image_url("skin/ajax-loader-small-red.gif") no-repeat 0 0; 
+        display: block;
+        position: absolute;
+        top: 40%;
+        left: 49%;
+        @include size(32px, 32px);
+        text-indent: -99999px;
+    }
+    .details {
+        margin: 0 0 10px 0;
+        overflow: hidden;
+        width: auto;
+        float: none;
+        p {
+            margin: 0 0 5px 0;
+        }
+        .name {
+            font-weight: bold;
+        }
+        img {
+            float: left;
+            display: inline;
+            margin: 0 10px 0 0;
+        }
+    }
+}
+
+#sidebar .widget {
+    background: #E0DBD7;
+}
+
+#sidebar-left .widget {
+    background: #E0DBD7;
+}
+
+#slideshow-container {
+    position: relative;
+}
+
+#lectures-slideshow {
+    margin: 10px 0 0 50px;
+}
+
+#slideshow-nav {
+    margin: 10px;
+    a {display: block; float: left; padding: 4px; color: $white; background: $red1; margin: 1px;}
+    a.activeSlide {background: $red1;}
+    a:visited{color: $white;}
+    a:focus {}
+    a:hover {background: $red2; }
+    a.controls {text-indent: -999999px; padding: 4px 10px;}
+    #prev2 {background: $grey5 image_url("skin/icon-arrow-white-left.png") no-repeat scroll center; }
+    #next2{background: $grey5 image_url("skin/icon-arrow-white-right.png") no-repeat center center;  }
+    #prev2:hover, #next2:hover {background-color: $darkTeal; }
+}
+
+#carousel-nav #prev2{ background: $grey5 image_url("skin/icon-arrow-white-left.png") no-repeat center center;  }
+
+#sidebar-left {
+}
+
+.map-parameters {
+	display: none;
+}
+.free-text p {margin: 0 0 10px 0;}

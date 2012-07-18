@@ -1,0 +1,85 @@
+#footer {
+	clear: both;
+    color: $black;
+    border-top: 1px $grey2 solid;
+    font-size: $BaseFontSizeSmaller;
+    a {
+		text-decoration: none;
+        border-bottom: none;
+        font-weight: bold;
+		&:hover {
+			text-decoration: underline;
+		}
+    }
+    .vcard {
+		background: #E0DBD7;
+		padding: 10px;
+
+		a {
+			color: $black;
+			font-weight: normal;
+			text-decoration: underline;
+    		&.email {
+				font-weight: bold;
+			}
+		}
+		a:focus {
+			color: #fff;
+		}	
+    }
+    #dev {
+		display: none;
+    }
+}
+
+#footer-links {
+    list-style: none;
+    padding-left: 0; //overrides _resets.scss
+    margin: 0;
+    @include clearfix;
+    background: #EAE9E7;
+        
+    li {
+        float: left;
+        padding: 10px 0;
+    }
+}
+
+#fb-root {
+    padding: 10px 0;
+    ul {
+        list-style: none;
+        display: block;
+        @include clearfix;
+        margin: 0;
+        padding: 0;
+        li {
+            float: left;
+            margin-right: 10px;
+        }
+    }
+    #share-this {
+        margin-right: 18px;
+    }
+}
+
+
+#feedbackLink {
+    &:link {
+        position: fixed;
+        right: -2px;
+        top: 400px;
+        display: block;
+        width: 35px;
+        height: 102px;
+        text-indent: -10000px;
+        background-image: image_url("skin/feedback.png");
+        overflow: hidden;
+        z-index: 6;
+    }
+    &:hover {
+	 position: fixed;
+         right: 0px;
+    }
+
+}

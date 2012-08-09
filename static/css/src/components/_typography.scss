@@ -102,15 +102,18 @@ blockquote {
 	margin: 20px 0 20px 0;
 	background: transparent image_url("skin/quote.png") no-repeat left top;
 	clear: both;
+    border: none;
 }
 img {
 	border: 2px solid #ccc;
 }
 img.right {
 	margin: 0 0 0 10px; 
+    float: right;
 }
 img.left {
 	margin: 0 10px 0 0;
+    float: left;
 }
 img.no-border {
     border: none;

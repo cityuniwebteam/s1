@@ -262,7 +262,7 @@
     list-style-position: outside;
     border-top: 4px solid $red1;
     float: none;
- 
+    clear: both;
     li {
         float: left;
         position: relative; 
@@ -342,14 +342,12 @@
     display: none;
   }
   #s-button {
-    height:27px;
-    width:26px;
+    @include size(27px, 26px);
     text-indent:-99999px;
     border:none;
     cursor:pointer;
     overflow:hidden;
-    font-size:0;
-    line-height:0;
+    @include font-shorthand(0, normal, 0);
     margin:0;
     padding:0;   
     position: absolute;
@@ -362,19 +360,17 @@
   }
 }
 #query {
+  @include font-shorthand(1em, normal, 21px);
   min-height: 21px;
-  height: 21px;
-  line-height: 21px;
+  @include size(21px, 100%);
   background: $grey1;
-  padding: 5px 5px 3px 5px;
-  font-size: 0.9em;
+  padding: 1px 5px 3px;
   border: none;
   float: left;
   display: inline;
   margin: 0;
   color: $grayDark;
   z-index: 1001;
-  width: 100%;
 }
 .ie6 #mast1 #query {
     width: 214px;

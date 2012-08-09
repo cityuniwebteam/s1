@@ -257,9 +257,6 @@
     display: inline;
     width: 720px;
     text-align: right;
-    position: absolute;
-    right: 0;
-    bottom: 17px;
   }
   #blog-title {
     font-size: 1.8em;
@@ -355,7 +352,7 @@
 @media only screen and (min-width: 992px) {
   /* 992 =================================================== */
 
-  @include grid-core(20px, 0);
+  @include grid-core($gridColumnWidth, $gridGutterWidth);
 
 }/*/mediaquery*/
 

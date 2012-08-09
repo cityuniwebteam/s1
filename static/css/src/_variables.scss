@@ -87,7 +87,7 @@ $monoFontFamily:        "Courier New", Courier, monospace !default;
 
 $baseFontSize:          14px !default;
 $baseFontFamily:        $sansFontFamily !default;
-$baseLineHeight:        18px !default;
+$baseLineHeight:        20px !default;
 $altFontFamily:         $serifFontFamily !default;
 $BaseFontSizeSmaller:	$baseFontSize - 2;
 
@@ -165,8 +165,8 @@ $zindexModal:             1050 !default;
 
 // Sprite icons path
 // -------------------------
-$iconSpritePath:          "../img/glyphicons-halflings.png" !default;
-$iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png" !default;
+//$iconSpritePath:          "../img/glyphicons-halflings.png" !default;
+//$iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png" !default;
 
 
 // Input placeholder text color
@@ -240,9 +240,9 @@ $infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
 
 
 // 49 columns and 0 gutters layout
-$gridColumns:             49 !default;
+$gridColumns:             25 !default;
 $gridColumnWidth:         20px !default;
-$gridGutterWidth:         0 !default;
+$gridGutterWidth:         20px !default;
 
 
 

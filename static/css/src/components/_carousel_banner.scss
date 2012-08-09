@@ -6,6 +6,9 @@
 	clear: both;
 	margin: 10px 0 20px 0;
 	position: relative;
+	img {
+		border: none;
+	}
 }
 #promo-wrapper,
 /* backgrounds for editing screen */
@@ -37,7 +40,7 @@
 }
 .banner-text {
     float: left;
-    color: #fff;
+    color: $white;
     width: 540px;
     margin-top: 30px;
 }

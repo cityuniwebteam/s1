@@ -66,37 +66,32 @@
 @import "utilities"; // Has to be last to override when necessary
 
 
+
 //include mobile responsive styles
 //@import "responsive";
 
 //extra compass mixins necessary for city styles
 @import "compass/typography/vertical_rhythm"; //for the adjust-font-size-to mixin in _widget.scss
 
-
+// jQuery UI
+@import "components/_jqueryUi";
 
 // city styles
 @import "components/typography";
-@import "components/city";
+//@import "components/city";
 @import "components/utilities";
 @import "components/primary_navigation";
 @import "components/secondary_navigation";
 @import "components/breadcrumbs";
-
-
 @import "components/header";
 @import "components/footer";
-
 @import "components/links";
-
 @import "components/forms";
- 
-
 @import "components/image_gallery";
 @import "components/accordion";
-
+@import "components/_carousel_banner";
 @import "components/widgets";
-
-
 
 //city responsive
 @import "components/city_responsive";
+

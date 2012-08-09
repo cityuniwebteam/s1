@@ -20,5 +20,5 @@ asset_cache_buster :none
 
 #this will define the absolute path to images referenced in the stylesheets
 asset_host do |asset|
-  "http://s1.dev.city.ac.uk/responsive/i"
+  "http://s1.dev.city.ac.uk/responsive/"
 end

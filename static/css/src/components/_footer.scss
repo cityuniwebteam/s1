@@ -42,6 +42,10 @@
     li {
         float: left;
         padding: 10px 0;
+        a {
+            border-right: 1px solid #CCCCCC;
+            display: block;
+            padding: 0 19px;}
     }
 }
 

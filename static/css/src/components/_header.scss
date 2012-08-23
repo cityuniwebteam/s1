@@ -6,11 +6,6 @@
 }
 
 /* cross-domain nav ==================================================== */
-#cross-domain-nav, 
-#global-nav1,
-#util-nav {
-  display: none;
-}
 .skip {
   left: -99999px;
   position: absolute;
@@ -252,9 +247,9 @@
 }
 
 /*primary nav*/
-#primary-nav {
+#primary-nav, #responsive-primary-nav {
     @include clearfix;
-    display: block!important;
+    display: block;
     margin: 0 0 5px 0;
     min-height: 20px;
     padding: 0;
@@ -322,7 +317,6 @@
   z-index: 100;
   overflow: hidden;
   zoom:1;
-  width: 98%;
   float: right;
 
   p {
@@ -378,7 +372,6 @@
 
 /* utility navigation ==================================================== */
 #util-nav {
-  display: none;
   padding: 0;
   margin: 0;
   float: right;
@@ -429,7 +422,6 @@
 #logo {
   float: left;
   clear: none;
-  width: 200px;
   margin: 15px 0;
   display: block;
   a {
@@ -443,13 +435,14 @@
   img {
     border: none;
     margin: 0;
+    max-width: inherit;
   }
 }
 /* Site link ==================================================================== */
 #site-home {
-  width: auto;
+  width: 720px;
   position: relative;
-  margin: 43px 0 0 0;
+  margin: 17px 0 14px;
   bottom: auto;
   right: auto;
   float: right;

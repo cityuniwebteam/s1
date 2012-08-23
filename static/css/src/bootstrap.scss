@@ -9,6 +9,7 @@
  */
 
 
+
 // using previous city css, taken from production branch, up to and including revision 6045
 // a lot of the bootstrap files may not be needed, the files can be removed when we\'re sure
 
@@ -18,6 +19,7 @@
 
 // CSS Reset
 @import "reset";
+
 
 // Grid system and page structure
 @import "scaffolding";
@@ -75,6 +77,9 @@
 
 // jQuery UI
 @import "components/_jqueryUi";
+
+//@import "components/mainGrid";
+
 
 // city styles
 @import "components/typography";

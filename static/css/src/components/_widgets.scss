@@ -170,7 +170,8 @@
 		min-height: 220px;
 	}
 	ol {
-	
+	   margin: 0;
+       padding: 0;
 		li{
 			padding: 10px 0;
 			margin: 0 10px;
@@ -183,9 +184,12 @@
 			}
 			
 			h3, h4 {
-                @include font-sans-serif(1em, bold, 1.3em);
+                @include font-sans-serif(0.85em, bold, 1.3em);
 				margin: 0 0 5px 0;
 				overflow: hidden;
+                a {
+                    font-weight: bold;
+                }
 			}
 			img {
 				float: left;

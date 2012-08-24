@@ -1,9 +1,16 @@
 /*Media Queries*/
+@media only screen and (max-width: 340px) {
+ #logo img {
+
+ }
+}
+
+
 @media only screen and (max-width: 980px) {
 
  body {
-    padding-left: 1px;
-    padding-right: 1px;
+    //padding-left: 1px;
+    //padding-right: 1px;
   }
   .container {
     width: auto;
@@ -31,7 +38,7 @@
   }
   #mobile-nav {
     float: right;
-    margin-top: 40px;
+    margin: 40px 0 0 0;
     li {
       list-style-type: none;
       float: left;
@@ -53,9 +60,17 @@
   #header {
     display: none;
   }
+
   #responsive_header {
     display: block;
+    #logo {
+      //float: none;
+      img {
+       // max-width: 100%;
+      }
+    }
   }
+
   #responsive-cross-domain-nav, #responsive-search, #responsive-util-nav, #primary-nav {
     display: none;
   }
@@ -128,6 +143,7 @@
         padding: 0 10px 0 0;
         a {
           padding-left: 0;
+          border: none;
         }
       }
   }

@@ -52,18 +52,23 @@
 		margin: 0;
 		padding: 0;
         border-bottom: none;
-	}
+        h4 a {
+            font-weight: bold;
+            border-bottom: none
+        }
+    }
 
     .ui-accordion-header {
 		font-weight: bold;
 		color: $grey6;
 		border: none;
 		border-bottom: 1px solid $white;
-		font-size: 1em;
+		font-size: 0.85em;
 		margin: 0;
 
 	  a {
 		  padding: 5px;
+          border: none;
 	  }
     }
 
@@ -86,7 +91,7 @@
 		    padding: 2px 5px;
 		
 		  h4 {
-			  font-size: 1em;
+			  font-size: 0.85em;
 			  margin: 0;
 		  }
 		}
@@ -434,16 +439,17 @@
 		background: #EAE9E7; 
 		border-bottom: 1px solid #fff;
 		@include clearfix;
-
 		ul {
 			margin: 0 0 0 5px;
 		}
-		
+        ol li {
+            list-style-type: none;
+            margin: 0;
+        }
 		h2 {
 			font-size: 1.2em;
 		}
-		
-		h3 {
+		h3, h4 {
             @include font-sans-serif(1.1em, bold, inherit);
 		}
 		

@@ -1,0 +1,3 @@
+[submodule "responsive"]
+	path = projects/responsive
+	url = git://github.com/cityuniwebteam/responsive.git

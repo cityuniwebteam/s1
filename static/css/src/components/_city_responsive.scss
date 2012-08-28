@@ -8,6 +8,10 @@
 
 @media only screen and (max-width: 980px) {
 
+
+  $responsivePadding: 5px;
+
+
  body, .responsive-wrapper {
     //padding-left: 1px;
     //padding-right: 1px;
@@ -32,13 +36,20 @@
     width: auto;
     margin-left: 0;
   }
-
+  #content {
+    padding: 0 $responsivePadding;
+  }
   #site-home {
     margin-top: 0;
+    padding-left: $responsivePadding;
+    font-size: 0.55em;
+    text-align: left;
+    float: left;
   }
   #mobile-nav {
     float: right;
-    margin: 85px 0 0 0;
+    margin: 78px $responsivePadding 0 0 ;
+    display: inline;
     li {
       list-style-type: none;
       float: left;
@@ -64,10 +75,11 @@
   #responsive_header {
     display: block;
     #logo {
-      margin: 68px 0 0 0;
+      margin: 68px 0 10px 5px;
       //float: none;
       img {
        // max-width: 100%;
+       width: 180px;
       }
     }
   }
@@ -85,15 +97,24 @@
     width: 100%;
     background: #EAE9E7 none repeat 0 0;
     box-shadow: 5px -5px 5px rgba(102, 102, 102, 0.1) inset;
-
     li {
       list-style-type: none;
       float: left;
       list-style: none outside none;
       padding: 0;
-      &.active a {
-        background: none repeat scroll 0 0 #B02A1A;
-        color: #FFFFFF;        
+      &.student-intranet, &.staff-intranet {
+        display: none;
+        clear: both;
+        position: absolute;
+        right: 0;
+        top: 30px;
+        background: #EAE9E7 none repeat 0 0;
+        box-shadow: 5px -5px 5px rgba(102, 102, 102, 0.1) inset;
+        width: 100px;
+        text-align: right;
+      }
+      &.staff-intranet {
+        top: 60px;
       }
       a {
         border: medium none;
@@ -104,14 +125,18 @@
         line-height: 2em;
         margin-left: 0;
         padding: 4px 10px;
-        &:hover {
+        &:hover, &:focus, &:active {
           -moz-transition: all 0.3s ease 0s;
           background: none repeat scroll 0 0 #333333;
           border: medium none;
           color: #FFFFFF;
           text-decoration: underline;          
-        }    
+        }
       }
+      &.active a {
+        background: none repeat scroll 0 0 #B02A1A;
+        color: #FFFFFF;        
+      }      
       #responsive-global-nav1 {
         position: absolute;
         margin: 0;
@@ -134,6 +159,18 @@
       }
 
     }
+  }
+  .responsive-cross-domain-nav-more {
+    float: right;
+    position: absolute;
+    right: 5px;
+    top: 4px;
+    z-index: 1000;
+    color: #333333;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 2em;
+    cursor: pointer;
   }
   #responsive-search {
     position: relative;
@@ -173,6 +210,10 @@
       width: 100%;
     }
   }
+  #breadcrumb {
+    margin-left: $responsivePadding;
+  }
+
   #secondary-nav {
     clear: both;
   }
@@ -219,8 +260,10 @@
       }
     }
   }
-  #map-widget .map {
-    //width: auto;
+  #map-widget {
+    .widget-content {
+      /*text-align: center;*/
+    }
   }
   #testimonials-widget {
     .widget-content  {

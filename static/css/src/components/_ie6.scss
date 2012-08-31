@@ -1,0 +1,42 @@
+/*ie6 specific styles*/
+
+/*because I can't fix a horredous double margin in the event widget any other way*/
+#events-widget {
+	.vcalendar li.vevent {
+		display: inline;
+	}
+	/*because min-height is a dirty word*/
+	.scrollable {
+		height: 300px;
+	}
+}
+
+#primary-breadcrumb {
+	a:first-child, a.child0 {
+		span {
+			margin: 4px;
+		}
+	}
+}
+#query { 
+	width: 214px;
+}
+
+#photos-dialog {
+	width: 500px;
+}
+#content .ui-tabs .ui-tabs-nav li {
+	margin: 0 1px 1px 0!important;
+}
+
+#footer {
+	#fb-root {
+        ul {
+            width: 980px!important;
+        }
+    }
+}
+/*lists get cut off in IE6*/
+#content ol li {
+    margin-left: 25px;
+}

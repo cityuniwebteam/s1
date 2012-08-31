@@ -1,0 +1,55 @@
+/*ie specific styles*/
+/*The speficicity of these selectors should match exactly those used in website.css to avoid confusion */
+
+.banner {
+	background: #333 image_url("gradients/ie-gradient-333333-000000-banner.png") left bottom repeat-x;
+}
+/*these elements all need the sandy grey gradient*/
+#header .login, 
+#mast, 
+.widget h2, 
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+#index-search, 
+#content table th,
+.home #study #opendays h3 {
+	background: #ebe7e4 image_url("gradients/ie-gradient-eae9e7-e0dbd7.png") left bottom repeat-x;
+}
+/*these elements all need the large #333 to #000 gradient*/
+.carousel-generic, 
+.carousel-video, 
+.carousel-event, 
+#container .featured-container .secondary, 
+.featured-container .top-featured {
+	background: #333 image_url("gradients/ie-gradient-333333-000000-carousel.png") left bottom repeat-x;
+}
+
+/*red gradient*/
+#filter h2, 
+#filter label:hover, 
+.featured-container .featured .featured-image .date,
+.date .date-month,
+.home #study #course-finder h3 {
+	background: #a0271f image_url("gradients/ie-gradient-b02a1a-a0271f.png") left bottom repeat-x;
+}
+
+#primary-nav li a:hover {
+	background-color: #a0271f;
+	color: #fff;
+}
+#primary-nav li a:focus{
+	background: #a0271f image_url("gradients/ie-gradient-a0271f-b02a1a.png") left bottom repeat-x;
+}
+
+/*fix for ie nth-child crappness, in conjunction with jQuery*/
+#breadcrumb {
+	a.last-child {
+		background-image: none;
+	}
+}
+.ui-widget-overlay {
+	filter: alpha(opacity=80);
+}
+#clearing-note dd {
+    float: none;
+}

@@ -1,0 +1,4 @@
+.box {
+    @include gradient-vertical(#b02a1a, #96190b);
+    padding: 10px;
+}

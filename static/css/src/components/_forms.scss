@@ -1,0 +1,498 @@
+/* 
+Nextweb Theme v0.3 - Feb 2012
+Description: Form Styles for city.ac.uk
+Author: Lawrence Naman
+Author URI: http://lawrencenaman.com
+Template: based on wforms
+Version: 0.3
+*/
+
+/*
+Contents
+
+1. Overwrites and specific form rules
+2. wForm form Section
+3. Field Labels
+4. Inputs
+5. Buttons
+6. .wForm form Builder Related Rules
+7. Inline Section
+8.
+9.
+10.
+
+*/
+
+/*overwrite padding*/ 
+#content .wFormContainer {
+	padding: 0;
+}
+
+/*specific rule for short course payment form*/
+#content .wFormContainer .wForm form #tfa_Coursefee-H {
+    display: block;
+}
+
+.wFormContainer .wForm  form {
+    margin: 0;
+    padding: 10px;
+	border: 1px solid #ccc;
+    @include font-family-sans-serif;
+    font-size: 1em;
+}
+
+.wForm form div {
+    padding: 0;
+    margin: 0;
+    clear: both;
+}
+
+#content .wForm p {
+    margin: 0 0 14px 0;
+}
+
+label {
+    white-space: normal;
+	margin: 0 0 5px 0;
+}
+
+/* .wForm form Sections ========================================= */
+
+/* Fieldset */
+.wForm form fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+	background: #FAFAFA;
+	margin-bottom: 10px;
+	display: block;
+	clear: both;
+}
+
+.wForm form fieldset legend {
+    color: #333333;
+    @include font-family-serif;
+    font-size: 1.4em;
+    padding: 10px;
+    padding: 0; /* overrides main wforms-layout.css */
+}
+
+/* IE7 */
+* html .wFormContainer .wForm form fieldset legend {
+    top: -.5em;
+    left: 0;
+}
+
+
+/* Nested Fieldsets */
+.wForm form fieldset fieldset  {
+    background-color: #fafafa;
+	margin-top: 10px;
+}
+
+.wForm form fieldset fieldset legend {
+	font-size: 1.2em;
+}
+
+/* Grid Section */
+.wForm form table {
+    border-collapse: collapse;
+    width: 200px;
+    margin-top: 14px;
+}
+.wForm form tr td {
+    padding: 0.5em;
+    border:0;	
+}
+.wForm form tr td .oneField {
+    margin-top: 0;
+}
+.wForm form th {
+    padding: 0 4px;
+}
+.wForm form .alternate-1 {
+    background-color:#f2e1e0;
+}
+.wForm form .alternate-0 {
+}
+
+/* html section */
+.wForm form div.htmlsection{
+    padding: 0;
+    }
+/* div when direct child of form */
+.wForm form > div.oneField {
+padding: 10px 10px 0 10px;
+}
+
+.wForm .labelsAbove > div.oneField label {
+    width: 90%;
+}
+
+/* Field Labels ======================================================================== */
+
+/* Base */
+.wForm form label {	
+    display: block;
+    margin: 0 0 4px 0!important;
+
+}
+
+.wForm label.preField{
+    display: inline-block;
+    background-color: inherit;
+    font-weight: bold;
+}
+
+.wForm .labelsAbove label.preField {
+    display: block;
+}
+
+/* Text inputs / Select label */
+label.preField {
+
+}
+
+/* Individual Checkbox / Radio label */
+.wForm form label.postField  {
+    margin: 0 10px 0 0!important;
+}
+br {
+
+}
+
+/* Inputs ======================================================================== */
+
+.wForm input, .wForm textarea, .wForm select {
+     border: 1px solid #ccc;
+     @include box-shadow("inset 0 0 8px  rgba(0,0,0,0.1), 0 0 16px rgba(0,0,0,0.1)");
+    padding: 5px!important;
+    background: #fff;
+    background: rgba(255,255,255,0.5);
+    display: block;
+    clear: left;
+}
+.wForm select {
+padding: 5px!important;
+}
+.wForm textarea {
+width: 90%;
+max-width: 410px;
+}
+
+td input, td textarea, td select {
+    width: 90%;
+}
+
+textarea {
+}
+
+input {
+}
+
+select {
+
+}
+
+/* Buttons ======================================================================= */
+
+/* Submit & Cancel buttons */
+.wForm form .actions {
+    font-size: 0.9em;
+}
+.wForm form .actions input {
+    @include font-family-sans-serif;
+}
+.wForm form .actions:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.wForm form div.actions .primaryAction {
+    /* forms specific */
+    width: auto;
+    border:none;
+	display: inline;
+    /* verbatim from compass generated website.css */
+    background: #b02a1a image_url('skin/icon-action-arrow.png') no-repeat right center;
+    padding: 5px 20px 5px 5px!important;
+    color: #fff!important;
+    font-weight: bold;
+    @include border-radius(2px);
+    @include transition(background 0.3s ease);
+    text-shadow: 1px 1px 1px #96190b;
+    @include box-shadow( 0 2px 2px rgba(0, 0, 0, 0.5));
+	margin-right: 20px;
+	font-size: 1em;
+
+}
+
+.wForm form .actions .primaryAction:hover{
+    background-color:#96190B;
+}
+
+.wForm form .actions .primaryAction:hover{
+    text-decoration:underline;
+    color:#FFFFFF;
+}
+/*cancel button*/
+.wForm form .actions .secondaryAction {
+    /* verbatim from compass generated website.css */
+    background: #333;
+    padding: 5px 8px!important;
+    color: #fff!important;
+    border: none;
+    @include border-radius(2px);
+    @include transition(background 0.3s ease);
+    text-shadow: 1px 1px 1px #96190b;
+    @include box-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+}
+/*to overwrite a rule from website.css*/
+#content .secondaryAction {
+	border-bottom: none;
+	font-weight: bold;
+	font-size: 1em;
+	margin-left: 0!important;	
+}
+
+.wForm form .primaryAction:hover, 
+.wForm form .secondaryAction:hover {
+    color: #666;
+}
+
+.wForm label.preField, 
+.wForm .labelsLeftAligned label.preField, 
+.wForm .labelsRightAligned label.preField {
+	min-width: inherit!important;
+}
+
+/*Paging Buttons */
+.wForm .wfPagePreviousButton, .wForm .wfPageNextButton {
+	cursor: pointer;
+	color: #B02A1A;
+}
+
+/* .wForm form Builder Related Rules ===================================================== */
+
+/* .wForm form or Fieldset instruction paragraph. */
+.wForm form .instructions {}
+
+/* Asterisk on required fields */
+.wForm form .reqMark {
+font-size: medium!Important;
+margin: 0!important;
+}
+
+#previewContainer #form_preview {
+    font-size: 14px;
+}
+#content .wForm form table {
+    font-size: 1em;
+    max-width: none;
+    display: block;
+}
+#content.standard .wForm form table {
+    max-width: 460px;
+}
+.wForm form table {
+    width: 100%;
+    margin-bottom: 14px;
+    border-left: 1px solid #C1DAD7;
+    border-top: 1px solid #C1DAD7;
+    font-size: 0.8em;
+    border-collapse: collapse;
+    
+    caption {
+        width: 100%;
+        text-align: right;
+        @include font-family-serif;
+        margin: 0 0 10px 0;
+    }
+    
+    th {
+        border: 1px solid #C1DAD7;
+        border-left: none;
+        border-top: none;
+        text-align: left;
+        font-weight: bold;
+        background: #EAE9E7;
+        @include gradient-vertical(#EAE9E7, #E0DBD7);
+        padding: 5px;
+    }
+    
+    td {
+        border-right: 1px solid #C1DAD7;
+        border-bottom: 1px solid #C1DAD7;
+        background: #fff;
+        text-align: left;
+        padding: 5px;
+        display: table-cell;
+    }
+    
+    td.alt {
+        background: #F5FAFA;
+        color: #797268;
+    }
+}
+
+/* w.wForm forms Related Rules ========================================================== */
+
+.wForm form div.oneField {
+    padding:0;
+    margin-bottom: 0!important;
+}
+
+/* Field w/ a validation error */
+.wForm form div.errFld {
+    /*background-color:#fff !important;*/
+    margin:0 -3px;
+    padding:0 3px;
+    border: none !important;
+}
+
+
+.wForm form div.errFld input, 
+.wForm form div.errFld textarea,
+.wForm form div.errFld select{
+    border:1px solid #CC3333;
+    background-color:#FEB1AD;
+	color: #333;
+}
+
+
+/* Styling for message associated with a validation error.
+   starts as span.errMsg, becomes div.errMsg when displaying errors inline */
+.wForm form div.errMsg {
+    margin-bottom: 10px;
+}
+	
+/* Field-Hint with focus */
+.wFormContainer .wForm form .field-hint span{
+    color: #000;
+}
+
+/* Field-Hint without focus */
+.wFormContainer .wForm form .field-hint-inactive {
+    color: #aaa;
+}
+
+/* Repeat Behavior divs (when not set on a fieldset) */
+.wForm form div.repeat {
+	border: 1px dotted #ced1d3;
+}
+.wForm form div.removeable {
+	border: 1px dotted #ced1d3;
+	background-color: #F5F5F5;
+}
+/* Links generated by the Repeat Behavior */
+.wForm form .duplicateLink {
+	line-height: 260%;
+	color: #414d59;
+}
+.wForm form .removeLink {
+	line-height: 260%;
+	color: #f00;
+}
+.wForm form td .duplicateLink, .wForm form td .removeLink  {
+	margin: 0;
+	line-height: 100%;
+}
+
+.oneChoice input {
+    @include size(18px, 18px);
+}
+
+/* common settings checkbox */
+input[type="checkbox"] {
+    @include size(18px, 18px);
+    border: none;
+    background-position-x: left;
+    margin-right: 5px;
+}
+
+input[type="checkbox"]:hover {
+    background-position-y: -40px;
+}
+
+input[type="checkbox"]:checked {
+    background-position-y: -20px;
+}
+
+input[type="checkbox"]:checked:hover {
+    background-position-y: -60px;
+}
+
+/* disabled settings for checkbox */
+input[type="checkbox"]:disabled {
+    opacity: .3;
+}
+.wForm input[type="radio"] {
+    border: none;   
+    margin-right: 5px;
+    text-shadow: none!important;
+    @include box-shadow(none);
+    -moz-box-shadow: none;
+    background: inherit;
+}
+
+.wForm form .oneField .oneChoice:last-child {
+    margin-bottom: 14px;
+}
+
+.wForm form .oneChoice label{
+	vertical-align: top !important;
+}
+
+.wForm form .oneChoice input{
+float: left;
+}
+
+.wForm form fieldset .oneField .choices {
+}
+
+/* Inline Section ========================================================== */
+
+.wForm form .inlineSection div.oneField{
+    display:block  !important;
+    clear:none;
+    margin-bottom: 14px!important;
+}
+
+.wForm form .inlineSection{
+    margin-bottom:14px;
+    padding: 0!important;
+}
+
+.wForm form .inlineSection .preField{
+
+}
+
+.wForm form .inlineSection .oneField select{
+    width:auto;
+    float:left;
+}
+
+.wForm form .inlineSection .oneField label{
+
+}
+
+/* Label when inside an inline section */
+.inlineSection .oneField .inlineLabel {
+    float: left;
+}
+
+.wForm form .inlineSection .oneField{
+}
+
+.wForm form .inlineSection .oneField input {
+    float: left;
+}
+
+.inlineSection select {
+    float: right;
+}
+
+.wForm form .inlineSection .oneField input {
+
+}

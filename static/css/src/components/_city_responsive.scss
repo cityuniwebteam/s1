@@ -1,0 +1,321 @@
+/*Media Queries*/
+@media only screen and (max-width: 340px) {
+ #logo img {
+
+ }
+}
+
+
+@media only screen and (max-width: 980px) {
+
+
+  $responsivePadding: 5px;
+
+
+ body, .responsive-wrapper {
+    //padding-left: 1px;
+    //padding-right: 1px;
+  }
+  .container {
+    width: auto;
+  }
+  // Fluid rows
+  .row-fluid {
+    width: 100%;
+  }
+  // Undo negative margin on rows and thumbnails
+  .row,
+  .thumbnails {
+    margin-left: 0;
+  }
+  // Make all grid-sized elements block level again
+  [class*="span"],
+  .row-fluid [class*="span"] {
+    float: none;
+    display: block;
+    width: auto;
+    margin-left: 0;
+  }
+  #content {
+    padding: 0 $responsivePadding;
+  }
+  #site-home {
+    margin-top: 0;
+    padding-left: $responsivePadding;
+    font-size: 0.55em;
+    text-align: left;
+    float: left;
+  }
+  #mobile-nav {
+    float: right;
+    margin: 78px $responsivePadding 0 0 ;
+    display: inline;
+    li {
+      list-style-type: none;
+      float: left;
+      a {
+        @include size(35px,35px);
+        @include border-radius(6px);
+        border: 2px solid #af241b;
+        margin-right: 2px;
+        background: #f8f6f7 image_url("skin/responsive_search.png") no-repeat 50% -37px;
+        text-indent: -9999px;
+        display: block;
+      }
+      &#mobile-search a {
+        background-position: 50% 1px;
+      }
+    }
+  }
+
+  #header {
+    display: none;
+  }
+
+  #responsive_header {
+    display: block;
+    #logo {
+      margin: 68px 0 10px 5px;
+      //float: none;
+      img {
+       // max-width: 100%;
+       width: 180px;
+      }
+    }
+  }
+
+  #mobile-cross-global-nav, #responsive-search, #responsive-util-nav, #primary-nav {
+    display: none;
+  }
+  #responsive-cross-domain-nav {
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    margin: 0;
+    width: 100%;
+    background: #EAE9E7 none repeat 0 0;
+    box-shadow: 5px -5px 5px rgba(102, 102, 102, 0.1) inset;
+    li {
+      list-style-type: none;
+      float: left;
+      list-style: none outside none;
+      padding: 0;
+      &.student-intranet, &.staff-intranet {
+        display: none;
+        clear: both;
+        position: absolute;
+        right: 0;
+        top: 30px;
+        background: #EAE9E7 none repeat 0 0;
+        box-shadow: 5px -5px 5px rgba(102, 102, 102, 0.1) inset;
+        width: 100px;
+        text-align: right;
+      }
+      &.staff-intranet {
+        top: 60px;
+      }
+      a {
+        border: medium none;
+        color: #333333;
+        display: block;
+        font-size: 11px;
+        font-weight: normal;
+        line-height: 2em;
+        margin-left: 0;
+        padding: 4px 10px;
+        &:hover, &:focus, &:active {
+          -moz-transition: all 0.3s ease 0s;
+          background: none repeat scroll 0 0 #333333;
+          border: medium none;
+          color: #FFFFFF;
+          text-decoration: underline;          
+        }
+      }
+      &.active a {
+        background: none repeat scroll 0 0 #B02A1A;
+        color: #FFFFFF;        
+      }      
+      #responsive-global-nav1 {
+        position: absolute;
+        margin: 0;
+        width: 100%;
+        li {
+          clear: both;
+          display: none;
+          width: 100%;
+          a {
+            padding: 3px 10px;
+            font-size: 0.9em;
+          }
+          &.courses {
+            display: block;
+            a {
+              background: #B02A1A image_url("skin/menu_expand.png") no-repeat 98% center;
+            }
+          }
+        }
+      }
+
+    }
+  }
+  .responsive-cross-domain-nav-more {
+    float: right;
+    position: absolute;
+    right: 5px;
+    top: 4px;
+    z-index: 1000;
+    color: #333333;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 2em;
+    cursor: pointer;
+  }
+  #responsive-search {
+    position: relative;
+    top: 125px;
+    z-index: 1000;
+    background-color: #E0DBD7;
+    padding: 20px 20px 0 20px;    
+    width: 100%;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;    
+  }
+  #responsive-util-nav {
+    position: absolute;
+    top: 218px;
+    z-index: 1000;
+    background-color: #E0DBD7;
+    padding: 0;    
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;    
+    li {
+      list-style-type: none;
+      float: left;
+      margin-right: 10px;
+    }
+  }
+
+
+  #responsive-primary-nav {
+    display: block;
+    border-top: none;
+    li {
+      clear: both;
+      width: 100%;
+    }
+  }
+  #breadcrumb {
+    margin-left: $responsivePadding;
+  }
+
+  #secondary-nav {
+    clear: both;
+  }
+  .responsive-wrapper {
+    float: none;
+  }
+
+
+  // hide/show widgets 
+  .widget {
+    padding: 0;
+    h2 {
+      cursor: pointer;
+    }
+    .widget-controls, .widget-content {
+      display: none;
+    }
+  }
+  #twitter-widget {height: auto;}
+
+
+
+
+
+  #news-widget {
+    .scrollable {
+        width: 100%;
+        #news-results {
+          width: 100%;
+          div {
+            width: 100%;
+          }
+      }
+    }
+    .widget-controls {
+      top: 7px;
+      right: 7px; 
+      .browse {
+        display: none;
+      }
+      a.all {
+        padding: 5px 10px;
+        border: none;
+      }
+    }
+  }
+  #map-widget {
+    .widget-content {
+      /*text-align: center;*/
+    }
+  }
+  #testimonials-widget {
+    .widget-content  {
+      width: 100%;
+      .items {
+        width: 100%;
+        li {
+          width: 100%;
+        }
+      }
+    }
+    .widget-controls {
+      display: none;
+    }
+  }
+
+
+  /* footer */
+  #footer-links {
+      background: none repeat scroll 0 0 #EAE9E7;
+      font-weight: bold;
+      list-style: none outside none;
+      margin: 0;
+      overflow: hidden;
+      padding: 5px;
+      li {
+        border-left: medium none;
+        float: none;
+        padding: 0 10px 0 0;
+        a {
+          padding-left: 0;
+          border: none;
+        }
+      }
+  }
+  object embed {
+    width: 100%;
+  }
+
+
+
+}
+
+
+@media only screen and (min-width: 980px) {
+  #header, #primary-nav {
+    display: block;
+  }
+  #responsive_header, #responsive-primary-nav, #mobile-nav {
+    display: none;
+  }
+  .responsive-wrapper {
+    float: right; 
+  }
+}

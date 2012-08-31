@@ -1,0 +1,474 @@
+#header {
+    position: relative;
+    overflow: visible;
+    z-index: 99;
+    display: block;
+}
+
+/* cross-domain nav ==================================================== */
+.skip {
+  left: -99999px;
+  position: absolute;
+}
+.skip:focus {
+  left: 0;
+  background-color: #FF0;
+  color: $black;
+  position: relative;
+}
+#cross-domain-nav {
+  background: $sandyGrey;
+  @include box-shadow(5px -5px 5px rgba(102, 102, 102, 0.1) inset);
+  margin: 0;
+  padding: 0;
+  width: auto;
+
+  li {
+    float: left;
+    list-style: none;
+    padding: 0;
+
+    a {
+      color: $grey6;
+      margin-left: 0;
+      font-weight: normal;
+      font-size: 11px;
+      padding: 3px 10px;
+      display: block;
+      border: none;
+      line-height: 2em;
+    }
+    a:hover,
+    a:focus,
+    a:active {
+      background: $grey6;
+      color: $white;
+      text-decoration: underline;
+      border: none;
+      @include transition(all 0.3s);
+    }
+    a:active {
+      text-decoration: none;
+    }
+  }
+  li.active a {
+    background: $red1;
+    color: $white;
+  }
+}
+
+/* global nav ==================================================== */
+#mast1 {
+  @include gradient-vertical($red1, $red3);
+}
+#global-nav1 {
+  list-style-type: none;
+  font-weight: bold;
+  font-size: 12px;
+  list-style-position: outside;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  float: left;
+
+  li {
+    float: left;
+    line-height: 1.2em;
+    margin: 0;
+    padding: 11px 0 11px 0px;
+    display: block;
+
+    a {
+      text-decoration: none;
+      background: transparent;
+      text-align: center;
+      margin: 0;
+      border: none;
+      color: $grey1;
+      display: block;
+      text-shadow: 1px 1px 1px #981A0C;
+      border-left: 1px solid #b42e1f;
+      padding: 0 10px 0 9px;
+    }
+    a:hover,
+    a:focus,
+    a:active {
+      color: $white;
+      text-decoration: underline;
+      border-bottom: none !important;
+      outline: none;
+    }
+  }
+}
+/*only show arrows if js is enabled*/
+.js #global-nav1 li a span {
+  display: block;
+  background: transparent image_url("skin/icon-arrow-sprite.png") no-repeat 97% -305px;
+  padding: 0px 21px 0px 0;
+}
+#global-nav1 li:first-child a span {
+  border-left: none;
+}
+/*first level only*/
+.js #global-nav1 > li a:hover span,
+.js #global-nav1 > li a:focus span,
+.js #global-nav1 > li a:active span {
+  background-position: 97% -25px;
+  color: $white;
+}
+.js #global-nav1 > li a:active span {
+  border-color: $grey6;
+  text-shadow: none;
+}
+.js #global-nav1 .active a {
+  background-color: none;
+  span {
+    border-color: $grey6;
+    color: $white;
+    background-position: 97% -25px;
+    text-shadow: none;
+  }
+}
+.js #global-nav1 .active .mega {
+  border-left: 1px solid $black;
+}
+#global-nav1 > li.active,
+#global-nav1 > li.active:hover {
+  background: $grey6;
+  @include box-shadow(inset 0 0 11px black);
+}
+
+/*drop down styles*/
+.drop {
+  position: absolute;
+  left: -999em;
+  padding: 20px 0;
+  float: left;
+  margin: 0 auto;
+  text-align: left;
+  z-index: 10000;
+  background: $white;
+  border: 5px solid $grey6;
+  margin-top: 10px;
+  width: auto;
+  @include box-shadow(0 5px 4px rgba(0, 0, 0, 0.5));
+}
+
+#global-nav1 .drop ul,
+#global-nav1 dl,
+#index-nav .drop ul,
+#index-nav dl {
+  display: block;
+  float: left;
+  border-left: 1px solid $grey2;
+  padding: 0 20px 0 19px;
+  width: 160px;
+}
+#global-nav1 dl.first,
+#global-nav1 .drop ul.first,
+#index-nav dl.first,
+#index-nav .drop ul.first {
+  margin: 0;
+  border: none;
+  padding: 0 20px;
+}
+#global-nav1 dl.last,
+#global-nav1 .drop ul.last {
+  width: 130px;
+}
+#global-nav1 .drop ul li,
+#index-nav .drop ul li {
+  float: none;
+  padding: 0 0 10px 0;
+}
+#global-nav1 li .drop a,
+#index-nav li .drop a {
+  background: $white;
+  margin: 0;
+  padding: 0;
+  border: none;
+  @include border-radius(0);
+  @include box-shadow(none);
+  font-size: 1em;
+  text-align: left;
+  display: inline;
+  font-weight: normal;
+  border-bottom: 1px solid $grey3;
+  text-decoration: none;
+  color: $red1;
+  text-shadow: none;
+}
+#global-nav1 li .drop a:hover,
+#index-nav li .drop a:hover {
+  background: $white;
+  @include box-shadow(none);
+  border-color: $white;
+  text-decoration: none;
+  color: $logoRed;
+}
+#global-nav1 li .drop a:focus,
+#index-nav li .drop a:focus,
+#global-nav1 li.active .drop a:focus,
+#index-nav li.active .drop a:focus {
+  background: $red1 !important;
+  color: $white;
+  border-color: $red1;
+}
+#global-nav1 dt {
+  width: auto;
+  font-size: 1.4em;
+  padding: 0 0 10px 0;
+  margin: 0 0 10px 0;
+  line-height: 1.4em;
+}
+#global-nav1 .drop dt a {
+  color: $grey6;
+}
+#global-nav1 dd {
+  width: auto;
+  padding: 0 0 0 15px;
+  margin: 0 0 10px 0;
+  background: transparent image_url("skin/icon-arrow-cccccc-right.png") no-repeat scroll 0 center;
+  line-height: 1.5em;
+}
+#global-nav1 dd a {
+  color: $red1;
+}
+#global-nav1 .drop div {
+  background: $white;
+  overflow: hidden;
+}
+.drop-inner {
+  background: $white;
+}
+#global-nav1 li .active {
+  left: 0;
+  top: auto;
+}
+
+/*primary nav*/
+#primary-nav, #responsive-primary-nav {
+    @include clearfix;
+    display: block;
+    margin: 0 0 5px 0;
+    min-height: 20px;
+    padding: 0;
+    list-style: none;
+    list-style-position: outside;
+    border-top: 4px solid $red1;
+    float: none;
+    clear: both;
+    li {
+        float: left;
+        position: relative; 
+        margin: 0; 
+        padding: 0;
+        text-align:center; 
+
+        a {
+            color: $grey6;
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 8px;
+            position: relative;
+            text-decoration: none;
+            width: auto;
+            border-right: 1px solid $white;
+            background: $sandyGreyDark;
+        }
+    
+        /*specificity issues mean this has to be seperate (unnested above)*/
+        a, &:first-child a, &:last-child a {
+            &:hover {
+                color: $white !important; 
+                @include gradient-vertical($red1, $red3);
+                background: $red1;
+            }
+            &:focus, &:active {
+                color: $white !important; 
+                @include gradient-vertical($red1, $red3);
+                background: $red1;
+            }
+        }
+        &:last-child a {
+            border-right: none;
+        }
+        &.current a {
+            @include gradient-vertical($red1, $red3);
+            background: $red1;
+            color: $white;
+            &:hover {
+                @include gradient-vertical($red1, $red3);
+                background: $red1;
+            }
+        }
+    }
+}
+
+
+
+/* search ======================================*/
+
+#search {
+  padding: 5px; 
+  margin: 0;
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  zoom:1;
+  float: right;
+
+  p {
+    overflow: hidden;
+    zoom:1;
+    margin: 0;
+    border: none;
+    width: 100%;
+    position: relative;
+  }
+  label {
+    color: $white;
+    margin: 0 10px 0 0;
+    padding: 0;
+    font-weight:700;
+    line-height: 1em;
+    display: none;
+  }
+  #s-button {
+    @include size(27px, 26px);
+    text-indent:-99999px;
+    border:none;
+    cursor:pointer;
+    overflow:hidden;
+    @include font-shorthand(0, normal, 0);
+    margin:0;
+    padding:0;   
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline;
+    float: left;
+    background: $grey1 image_url("skin/search-red.png") no-repeat center center;
+    text-indent: -99999px;
+  }
+}
+#query {
+  @include font-shorthand(1em, normal, 21px);
+  min-height: 21px;
+  @include size(21px, 100%);
+  background: $grey1;
+  padding: 1px 5px 3px;
+  border: none;
+  float: left;
+  display: inline;
+  margin: 0;
+  color: $grayDark;
+  z-index: 1001;
+}
+.ie6 #mast1 #query {
+    width: 214px;
+}
+
+/* utility navigation ==================================================== */
+#util-nav {
+  padding: 0;
+  margin: 0;
+  float: right;
+
+  li {
+    display: block;
+    float: left;
+    list-style: none;
+    padding: 0;
+    position: relative;
+    margin: 12px 0 0 0;
+    border-left: 1px solid $grey2;
+
+    a {
+      font-weight: normal;
+      font-size: 0.86em;
+      line-height: 1em;
+      color: $red1;
+      border-bottom: 1px solid $grey3;
+      display: block;
+      margin: 0 10px 0 10px;
+      padding: 0 0 2px 0;
+    }
+    a:hover {
+      text-decoration: none;
+      color: $logoRed;
+      border-bottom: 1px solid $white;
+    }
+    a:focus {
+      color: $white;
+    }
+    a:active {
+      background: $red1;
+      color: $white;
+    }
+  }
+  li:first-child {
+    border-left: 0;
+    margin-left: 0;
+  }
+  li:last-child a {
+    padding-right: 0;
+    margin-right: 0;
+  }
+}
+
+/* Logo ========================================================================= */
+#logo {
+  float: left;
+  clear: none;
+  margin: 15px 0;
+  display: block;
+  a {
+    border-bottom: 1px solid $white;
+  }
+  a:focus,
+  a:hover {
+    background: $white;
+    border-bottom: 1px solid #e7e7e7;
+  }
+  img {
+    border: none;
+    margin: 0;
+    max-width: inherit;
+  }
+}
+/* Site link ==================================================================== */
+#site-home {
+  width: 720px;
+  position: relative;
+  margin: 17px 0 14px;
+  bottom: auto;
+  right: auto;
+  float: right;
+  font-size: 0.7em;
+  text-align: right;
+
+  a {
+    @include font-serif(2.65em, normal, 1.385em);
+    color: $grayDark;
+    margin-top:0;
+    padding-top:0;
+    padding-bottom:0;
+    margin-bottom:0;
+  }
+  a:visited {
+    color: $grayDark;
+  }
+  a:hover {
+    color: $red2;
+  }
+  a:focus {
+    color: $white;
+  }
+}
+#blog-title {
+    @include font-family-serif;
+    font-size: 1.3em;
+    margin: 10px 0 20px 0;
+}

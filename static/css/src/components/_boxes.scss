@@ -1,0 +1,160 @@
+@import "compass/css3/images";
+
+.box {
+    @include grey-gradient;
+}
+.box-content {
+	margin: 20px;    
+}
+/* standalone listing module */
+#container .module-list {
+    margin-bottom: 20px;
+    border: none;
+   
+    h2, h3, h4, h5, h6 {
+        margin: 0 0 10px 0;
+        font-size: 1.6em;
+        padding: 0;
+    }
+	h2 {
+		border: none;
+		margin: 0 0 10px 0;
+		padding: 0;
+	} 
+    ul, ol {
+        padding: 0;
+        margin: 0;
+    }
+	li {
+		clear: both;
+		overflow: hidden;
+        background: none;
+        padding: 10px 0;
+        margin: 0;
+        border-top: 1px solid $grey2;
+        border-bottom: none;
+        list-style: none;
+        
+      	img {
+            float: left;
+            margin-right: 10px;
+            border: 2px solid $grey2;
+        }
+        &:first-child {
+            border-top: none;        
+        }
+    }
+    .action-button {
+        float: right;
+        border: none;
+    }
+    .event-details {
+        width: auto;
+        maring: 0;
+        float: none;
+    }
+    .date {
+        margin-right: 10px;
+    }
+}
+/* end standalone listing module */
+
+#container .module-twitter {
+    h2, h3, h4, h5, h6 {
+        background: image_url("skin/vector-social-media-icons/icon-twitter-bird.png") no-repeat scroll 0 center transparent;
+        border: medium none;
+        padding: 0 0 0 40px; 
+    }  
+} 
+
+/* end standalone twitter module */
+
+
+/* standalone contact module */
+#container .module-contact {
+    font-size: 12px;
+    line-height: 18px;
+	clear: both;
+	@include grey-gradient;
+	margin-top: 20px;
+	overflow: hidden;
+	padding: 10px 0 27px 23px;
+	margin-bottom: 20px;
+	h2 {
+		margin: 0 0 7px 0;
+		padding: 0;
+	}
+	.contact-address {
+		float: right;
+		margin: -18px 0 0 0;
+		padding-right: 109px;
+		width: 635px;
+	}
+}
+
+/* standalone search module */
+#container .module-search {
+	clear: left;
+	margin-bottom: 20px;
+    background: #333333;
+    height: 100px;
+    color: #fff;
+    position: relative;
+    
+    fieldset {
+        margin: 0;     
+        padding: 20px;
+        background: #333333;
+    }
+    
+    label {
+        display: inline;
+        float: left;
+        font-size: 1.5em;
+        padding: 9px 0 8px 0;
+        margin-right: 20px;
+    }
+    p {
+        margin: 0;
+        overflow: hidden;
+    }
+    a {
+        color: #fff;
+    }
+    #search-query {
+        background: none repeat scroll 0 0 #F7F7F7;
+        border: medium none;
+        display: block;
+        float: left;
+        font-size: 1.4em;
+        height: 27px;
+        line-height: 27px;
+        min-height: 27px;
+        padding: 4px 5px;
+    }
+    .search-button {
+        background: image_url("skin/search-red.png") no-repeat scroll center center #F7F7F7;
+        border: medium none;
+        cursor: pointer;
+        display: inline;
+        float: left;
+        font-size: 0;
+        height: 35px;
+        line-height: 0;
+        margin: 0;
+        overflow: hidden;
+        text-indent: -99999px;
+        width: 35px;
+    }
+    .search-advanced {
+        text-align: right;
+        padding-top: 10px;
+    }
+}
+
+#share-this {
+	margin: 0 0 14px;   
+}
+#fb-root {
+    padding: 0;
+}

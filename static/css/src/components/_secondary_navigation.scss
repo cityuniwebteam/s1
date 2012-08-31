@@ -1,0 +1,126 @@
+
+#secondary-nav {
+    background: $grey2;
+	margin-bottom: 20px;
+	font-size: $BaseFontSizeSmaller;
+	margin-left: 0;
+
+    //show/hide css solution, don\'t look too closely
+    ul.with-siblings {
+		display: none;
+		visibility: hidden; //see http://juicystudio.com/article/screen-readers-display-none.php
+    }
+    &.level3 {
+		ul.no-siblings {
+			display: none;
+			visibility: hidden; //see http://juicystudio.com/article/screen-readers-display-none.php
+		}
+		ul.with-siblings {
+			display: block;
+			visibility: visible;
+		}
+    }
+
+    #secondary-nav-label {
+		padding:1em;
+		font-weight: bold;
+		color: $white;
+		background: #333;
+		@include gradient-vertical($grey6, $black);
+    }   			 
+
+    ul {
+		margin:0;
+		padding:0;
+		list-style: none;
+
+		a {
+			padding: 0.4em;
+			display: block;
+			text-decoration: none;
+			color: $black;
+			font-weight: bold;
+			border-bottom: none;
+			&:hover {
+				background-color: #82828c;
+				color: $white;
+			}
+			
+			&:focus {
+				background-color: $red2;
+				color: $white;
+			}
+			
+			&.selected {
+				color:$white;
+				@include gradient-vertical($red1, $red3);
+				background-color: $red2;
+				background-repeat: no-repeat;
+				background-position: 97% center;
+				background-image: image_url("skin/icon-arrow-white-right.png");
+				color: $white;
+				padding-right: 15px;
+			
+				&:hover {
+					background-color: #82828c;
+					color: $white;
+				}
+				
+				&:focus {
+					background-color: $black;
+					color: $white;
+				}
+			}
+			
+		}//end a
+	
+		li {
+			padding:0;
+	
+			a {
+				border-top:1px solid $white;
+			}
+	
+			//second level
+			ul {
+				margin: 0;
+	
+				li {
+					margin: 0;
+		
+					a {
+						background-color: $grey3;
+						font-weight:normal;
+						padding-left: 1em;
+						border-top: 0;
+						border-bottom: 1px solid $grey4;
+
+					}
+		
+					//third level
+					ul {
+						border: none;
+		
+						li {
+							a {
+								padding-left: 2em;
+								background-color: $grey2;
+								border-color: $grey3
+							}		
+						}
+					}
+				}
+				
+				li:last-child {
+					border-bottom:none;
+				}
+			}
+		}
+	
+		li.parent { 
+			&:hover {
+				background: transparent image_url("skin/icon-arrow-black-down.png") no-repeat 97% 50%;
+			} 
+		}
+    }
+}

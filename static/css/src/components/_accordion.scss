@@ -1,0 +1,9 @@
+.accordion {
+	margin: 0 0 20px;
+}
+
+/*overwtite for accordion headers*/
+.ui-accordion-header a {
+	font-weight: bold;
+    padding-bottom: 8px;
+}

@@ -1,0 +1,53 @@
+// reset styles
+
+//TODO: inlcude in  hide-text mixin? 
+.left {
+  float: left
+}
+.right {
+  float: right
+}
+.clearfix {
+  //using the compass provided mixin
+  @include clearfix();
+}
+
+ul{
+  list-style-type: disc;
+  list-style-position: outside;
+  margin: 0 0 10px 0;
+  padding: 0 0 0 1.15em;
+}
+li {
+    padding: .2em 0;
+    line-height: 1.5em;
+}
+.image-right {
+    float: right;
+    margin: 0 10px 10px 10px;
+}
+.bold, strong, b {
+    font-weight: bold;
+}
+em, i {
+    font-style: italic;
+}
+/*FOUC me*/
+.js #explore-city.ui-tabs {display: none;}
+.js #promo-area {
+    
+    @for $i from 1 through 10 {
+	#slide-#{$i} {
+	    display: none;
+	}
+    }
+
+    #slide-1 {
+        display: block;
+    }
+}
+.hidden {
+    display: none;
+}
+
+
